@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -24,14 +26,28 @@ class GetStared extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: CircleAvatar(
-        backgroundColor: Color.fromARGB(255, 184, 228, 248),
+        backgroundColor: Color.fromARGB(255, 211, 231, 240),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('BookTracker',style:TextStyle(color: Colors.black)),
-            ),
-            Text('Read ..Chane .. Yourself',style:TextStyle(color: Colors.black))
+            Spacer(),
+            Text('BookTracker',
+            style:TextStyle(color: Color.fromARGB(255, 31, 31, 31),fontSize: 30,fontWeight: FontWeight.bold)),
+            Text('"Read ..Change .. Yourself"',
+            style:TextStyle(
+              color: Color.fromARGB(255, 107, 107, 107),
+              fontSize: 20,
+              fontWeight: FontWeight.w400)),
+              SizedBox(height:50),
+              TextButton.icon(
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                  backgroundColor: Color.fromARGB(255, 248, 250, 117)
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                },
+                 icon: Icon(Icons.login_rounded,color: Colors.black,), label: Text('Sign in to get started', style: TextStyle(color: Colors.black),)),
+            Spacer(),
 
           ],
         ),
