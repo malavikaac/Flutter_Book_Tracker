@@ -26,7 +26,7 @@ class GetStared extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: CircleAvatar(
-        backgroundColor: Color.fromARGB(255, 215, 232, 240),
+        backgroundColor: Color.fromARGB(255, 231, 243, 248),
         child: Column(
           children: [
             Spacer(),

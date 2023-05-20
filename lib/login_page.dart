@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
               color: Color.fromARGB(255, 217, 243, 240),
             )),
+            Text("Sign In",style: TextStyle(color: Color.fromARGB(255, 143, 228, 131)),),
              Expanded(
               flex:2,
               child: Container(
