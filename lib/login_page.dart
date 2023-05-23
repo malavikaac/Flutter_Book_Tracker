@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
             Expanded(
               flex:2,
               child: Container(
-              color: Color.fromARGB(255, 217, 243, 240),
+              color: Color.fromARGB(255, 46, 165, 151),
             )),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
              Expanded(
               flex:2,
               child: Container(
-              color: Color.fromARGB(255, 217, 243, 240),
+              color: Color.fromARGB(255, 43, 117, 109),
             )),
           ],
         ),
