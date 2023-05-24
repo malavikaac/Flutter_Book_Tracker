@@ -23,6 +23,8 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(20.0),
               child: Text("Sign In",style: TextStyle(color: Color.fromARGB(255, 31, 124, 19)),),
             ),
+          TextField(),
+          TextField(),
              Expanded(
               flex:2,
               child: Container(
