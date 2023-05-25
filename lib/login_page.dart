@@ -15,21 +15,34 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Expanded(
-              flex:2,
-              child: Container(
-              color: Color.fromARGB(255, 46, 165, 151),
-            )),
+                flex: 2,
+                child: Container(
+                  color: Color.fromARGB(255, 46, 165, 151),
+                )),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Text("Sign In",style: TextStyle(color: Color.fromARGB(255, 31, 124, 19)),),
+              child: Text(
+                "Sign In",
+                style: TextStyle(color: Color.fromARGB(255, 31, 124, 19)),
+              ),
             ),
-          TextField(),
-          TextField(),
-             Expanded(
-              flex:2,
-              child: Container(
-              color: Color.fromARGB(255, 43, 117, 109),
-            )),
+            TextField(
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  labelText: 'Enter Name',
+                  hintText: 'Enter Your Name'),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  labelText: 'Enter password',
+                  hintText: 'password'),
+            ),
+            Expanded(
+                flex: 2,
+                child: Container(
+                  color: Color.fromARGB(255, 43, 117, 109),
+                )),
           ],
         ),
       ),
