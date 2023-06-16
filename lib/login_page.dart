@@ -16,32 +16,60 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Expanded(
                 flex: 2,
-                child: Container(
-                  color: Color.fromARGB(255, 46, 165, 151),
-                )),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+                child: Container(color: Color.fromARGB(255, 227, 230, 248))),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
               child: Text(
                 "Sign In",
-                style: TextStyle(color: Color.fromARGB(255, 31, 124, 19)),
+                style: TextStyle(
+                    color: Color.fromARGB(255, 37, 37, 37),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20),
               ),
             ),
-            TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: 'Enter Name',
-                  hintText: 'Enter Your Name'),
+            const SizedBox(
+              height: 10,
             ),
-            TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
+            Column(
+              children: [
+                SizedBox(
+                  width: 300,
+                  height: 300,
+                ),
+                TextButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.portrait_rounded),
+                    label: Text(
+                      'Create Account',
+                      style:
+                          TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+                    ))
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Enter Name',
+                  //hintText: 'Enter Your Name'
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Enter password',
-                  hintText: 'password'),
+                  //hintText: 'password'
+                ),
+              ),
             ),
             Expanded(
                 flex: 2,
                 child: Container(
-                  color: Color.fromARGB(255, 43, 117, 109),
+                  color: Color.fromARGB(255, 227, 230, 248),
                 )),
           ],
         ),
