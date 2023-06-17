@@ -8,6 +8,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool isCreatedAccountClicked = false;
+  final _formkey = GlobalKey<FormState>();
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -33,38 +37,82 @@ class _LoginPageState extends State<LoginPage> {
             Column(
               children: [
                 SizedBox(
-                  width: 300,
-                  height: 300,
-                ),
+                    width: 300,
+                    height: 300,
+                    child: isCreatedAccountClicked != true
+                        ? Form(
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: TextFormField(
+                                    controller: _emailTextController,
+                                    decoration: InputDecoration(
+                                        fillColor: Colors.white,
+                                        focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                                color: Color.fromARGB(
+                                                    213, 150, 37, 170))),
+                                        enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    213, 150, 37, 170)))),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: TextFormField(
+                                    controller: _passwordTextController,
+                                    decoration: InputDecoration(
+                                        fillColor: Colors.white,
+                                        focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                                color: Color.fromARGB(
+                                                    213, 150, 37, 170))),
+                                        enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            borderSide: BorderSide(
+                                                color: Color.fromARGB(
+                                                    213, 150, 37, 170)))),
+                                  ),
+                                )
+                              ],
+                            ),
+                            key: _formkey)
+                        : Form(
+                            child: TextFormField(),
+                          )),
                 TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.portrait_rounded),
+                    onPressed: () {
+                      setState(() {
+                        if (!isCreatedAccountClicked) {
+                          isCreatedAccountClicked = true;
+                        } else {
+                          isCreatedAccountClicked = false;
+                        }
+                      });
+                    },
+                    icon: Icon(
+                      Icons.portrait_rounded,
+                      color: Color.fromARGB(213, 150, 37, 170),
+                    ),
                     label: Text(
-                      'Create Account',
-                      style:
-                          TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+                      isCreatedAccountClicked
+                          ? 'Already have an account?'
+                          : 'Create Account',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                          color: Color.fromARGB(213, 150, 37, 170)),
                     ))
               ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter Name',
-                  //hintText: 'Enter Your Name'
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter password',
-                  //hintText: 'password'
-                ),
-              ),
             ),
             Expanded(
                 flex: 2,
